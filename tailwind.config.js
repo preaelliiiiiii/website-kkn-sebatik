@@ -9,7 +9,7 @@ const config = {
       },
       fontFamily: {
         Montserrat: ["Montserrat", "sans-serif"],
-        HankenGrotesk: ["Hanken_Frotesk"],
+        HankenGrotesk: ["Hanken_Grotesk"],
       },
     },
   },

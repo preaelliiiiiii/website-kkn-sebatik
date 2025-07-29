@@ -29,12 +29,12 @@ const About = () => {
         About Sebatik Barat
       </h1>
       <div className="grid grid-cols-10 justify-center w-full p-[1.25vw]">
-        <div className="relative col-span-4 flex flex-col items-center p-6 rounded-lg shadow-md bg-pink-200">
+        <div className="relative col-span-4 flex flex-col items-center p-6 rounded-[1.563vw] shadow-md bg-pink-200">
           {/* Placeholder Image 1 */}
-          <div className="absolute w-[28.646vw] aspect-square top-0 left-0 w-56 h-56 bg-[#D9D9D9] rounded-lg transform translate-x-4 translate-y-4 z-0 border-black border-2 rounded-[1.563vw]"></div>
+          <div className="absolute w-[28.646vw] aspect-square top-0 left-0  bg-[#D9D9D9] transform translate-x-4 translate-y-4 z-0 border-black border-2 rounded-[1.563vw]"></div>
 
           {/* Placeholder Image 2 */}
-          <div className="absolute w-[28.646vw] aspect-square top-0 left-0 w-60 h-60 bg-[#D9D9D9] rounded-lg transform translate-x-16  translate-y-12 z-10 border-black border-2 rounded-[1.563vw]"></div>
+          <div className="absolute w-[28.646vw] aspect-square top-0 left-0 bg-[#D9D9D9] transform translate-x-16  translate-y-12 z-10 border-black border-2 rounded-[1.563vw]"></div>
         </div>
         <div className="col-start-5 col-span-7 px-12">
           <ProfilPemerintahan />

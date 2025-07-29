@@ -1,5 +1,8 @@
+import Berita from "@/components/beritapage/Berita";
 import About from "@/components/landingpage/About";
 import LayananInformasi from "@/components/landingpage/LayananInformasti";
+import UMKM from "@/components/umkmpage/UMKM";
+// import { useEffect } from "react";
 // import Image from "next/image";
 
 export default function Home() {
@@ -7,6 +10,8 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <About />
       <LayananInformasi />
+      <Berita />
+      <UMKM />
       {/* <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
