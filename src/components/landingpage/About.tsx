@@ -1,4 +1,11 @@
+import Link from "next/link";
+
 const ProfilPemerintahan = () => {
+  const links = [
+    { text: "Visi & Misi", path: "/visimisi" },
+    { text: "Struktur Organisasi", path: "/strukturorganisasi" },
+  ];
+
   return (
     <div className="flex flex-col w-[45.573vw] gap-[0.833vw]">
       <h1 className="font-montserrat font-semibold text-[1.999vw] text-[#1B4526]">
@@ -11,20 +18,22 @@ const ProfilPemerintahan = () => {
         aspernatur blanditiis doloremque.
       </div>
       <div className="flex flex-row mt-[0.833vw] gap-[1.833vw]">
-        {["Visi & Misi", "Struktur Organisasi"].map((text) => (
-          <button
+        {links.map(({ text, path }) => (
+          <Link
             key={text}
+            href={path}
             className="group relative overflow-hidden z-0 flex cursor-pointer justify-center items-center w-[9.74vw] aspect-[187/48] rounded-[0.208vw] bg-gradient-to-b from-[#1B4526] via-[#1B4526] to-[#43AB5E] font-montserrat font-semibold text-[0.833vw] text-white transition-all duration-300"
           >
             <span className="relative z-10">{text}</span>
             {/* Layer gradasi hijau masuk dari kiri saat hover */}
             <span className="absolute inset-0 z-0 bg-[#43AB5E] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
-          </button>
+          </Link>
         ))}
       </div>
     </div>
   );
 };
+
 
 const About = () => {
   return (

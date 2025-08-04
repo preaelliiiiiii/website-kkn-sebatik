@@ -26,22 +26,13 @@ const Berita = () => {
       }
     } else {
       pages.push(1);
-
-      if (currentPage > 3) {
-        pages.push("...");
-      }
+      if (currentPage > 3) pages.push("...");
 
       const start = Math.max(2, currentPage - 1);
       const end = Math.min(totalPages - 1, currentPage + 1);
+      for (let i = start; i <= end; i++) pages.push(i);
 
-      for (let i = start; i <= end; i++) {
-        pages.push(i);
-      }
-
-      if (currentPage < totalPages - 2) {
-        pages.push("...");
-      }
-
+      if (currentPage < totalPages - 2) pages.push("...");
       pages.push(totalPages);
     }
 
@@ -49,11 +40,12 @@ const Berita = () => {
   };
 
   return (
-    <div className="relative w-full flex flex-col justify-center container">
-      <h1 className="font-hanken-grotesk text-primary-100 font-bold text-[3.906vw] flex px-[2.5vw] justify-items-center">
-        Berita
+    <section className="mt-16 px-6 w-full flex flex-col items-center max-w-screen-xl mx-auto">
+      <h1 className="text-[3vw] font-bold text-green-900 mb-[1.5vw]">
+        Berita Terkini
       </h1>
-      <div className="grid grid-cols-4 gap-x-[1.25vw] gap-y-[2.5vw] justify-items-center">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
         {currentData.map((berita, index) => (
           <BeritaCard
             key={index}
@@ -64,24 +56,25 @@ const Berita = () => {
       </div>
 
       {/* Pagination */}
-      <div className="flex justify-center items-center mt-10 space-x-2">
+      <div className="flex justify-center items-center mt-12 space-x-2">
         <button
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
           disabled={currentPage === 1}
-          className="text-green-700 font-medium hover:underline flex items-center space-x-1 disabled:opacity-40"
+          className="px-3 py-1 text-green-700 font-medium hover:underline disabled:opacity-40"
         >
-          <span>← Previous</span>
+          ← Previous
         </button>
 
-        {/* Numbered Pages */}
-        <div className="flex space-x-2">
+        <div className="flex space-x-1">
           {renderPageNumbers().map((page, idx) =>
             typeof page === "number" ? (
               <button
                 key={idx}
                 onClick={() => setCurrentPage(page)}
-                className={`w-8 h-8 rounded-md text-green-700 font-semibold ${
-                  page === currentPage ? "bg-gray-300" : "hover:bg-gray-100"
+                className={`w-8 h-8 rounded-md font-semibold text-sm ${
+                  page === currentPage
+                    ? "bg-green-600 text-white"
+                    : "text-green-700 hover:bg-green-100"
                 }`}
               >
                 {page}
@@ -89,7 +82,7 @@ const Berita = () => {
             ) : (
               <span
                 key={idx}
-                className="w-8 h-8 flex items-center justify-center text-gray-500"
+                className="w-8 h-8 flex items-center justify-center text-gray-400"
               >
                 ...
               </span>
@@ -102,12 +95,12 @@ const Berita = () => {
             setCurrentPage((prev) => Math.min(prev + 1, totalPages))
           }
           disabled={currentPage === totalPages}
-          className="text-green-700 font-medium hover:underline flex items-center space-x-1 disabled:opacity-40"
+          className="px-3 py-1 text-green-700 font-medium hover:underline disabled:opacity-40"
         >
-          <span>Next →</span>
+          Next →
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 

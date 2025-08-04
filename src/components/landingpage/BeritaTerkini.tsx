@@ -1,5 +1,6 @@
 "use client";
 import * as React from "react";
+import { useRouter } from "next/navigation"; // ✅ Tambahkan router
 
 interface NewsCardProps {
   imageUrl: string;
@@ -115,14 +116,11 @@ const BeritaTerkini: React.FC<BeritaTerkiniProps> = ({
     right:
       "https://api.builder.io/api/v1/image/assets/TEMP/f0f70c3049ac289cd7961f793166c051e212e3fd?width=1120",
   },
-  onReadMore,
 }) => {
+  const router = useRouter(); // ✅ Gunakan router dari Next.js
+
   const handleReadMore = () => {
-    if (onReadMore) {
-      onReadMore();
-    } else {
-      console.log("Read more clicked");
-    }
+    router.push("/berita"); // ✅ Navigasi ke halaman /berita
   };
 
   return (

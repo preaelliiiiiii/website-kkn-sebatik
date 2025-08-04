@@ -4,7 +4,7 @@ import { FaArrowRight } from "react-icons/fa6";
 
 const VisiMisi = () => {
   return (
-    <div className="flex flex-wrap justify-between gap-[2vw] px-[5vw] w-full mt-[3vw]">
+    <div className="font-montserrat flex flex-wrap justify-between gap-[2vw] px-[5vw] w-full mt-[3vw]">
       {/* Kiri: Konten Visi & Misi */}
       <div className="flex-1 max-w-[45vw]">
         <h2 className="text-[2.5vw] font-bold text-green-900 mb-[1.5vw]">
@@ -25,7 +25,6 @@ const VisiMisi = () => {
             Visi Sebatik Barat
           </span>
         </button>
-
 
         <p className="text-[1vw] text-black mb-[1.2vw] leading-[1.7vw]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

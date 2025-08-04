@@ -1,19 +1,19 @@
-import React from 'react';
+import React from "react";
 
 const StrukturOrganisasi = () => {
   const data = [
     {
-      jabatan: 'Camat',
-      nama: 'Lorem ipsum. S.Kom',
+      jabatan: "Camat",
+      nama: "Lorem ipsum. S.Kom",
     },
     {
-      jabatan: 'Sekre Camat',
-      nama: 'Lorem ipsum. S.Kom',
+      jabatan: "Sekre Camat",
+      nama: "Lorem ipsum. S.Kom",
     },
   ];
 
   return (
-    <div className="flex flex-col items-center mt-10 mb-10">
+    <div className="font-montserrat flex flex-col items-center mt-20 mb-10">
       <h2 className="text-[2.5vw] font-bold text-green-900 mb-[1.5vw]">
         Daftar Pejabat
       </h2>
@@ -32,26 +32,30 @@ const StrukturOrganisasi = () => {
               />
             </div>
             <div className="px-6 mt-3 mb-5">
-              <p className="text-gray-500 text-base">{item.jabatan}</p>
-              <p className="text-gray-700 font-medium text-lg">{item.nama}</p>
+              <p className="text-gray-500 text-base font-medium">
+                {item.jabatan}
+              </p>
+              <p className="text-gray-700 font-semibold text-lg">
+                {item.nama}
+              </p>
             </div>
           </div>
         ))}
       </div>
 
-    <div className="flex flex-col items-center mt-30 mb-10">
-      <h2 className="text-[2.5vw] font-bold text-green-900 mb-[1.5vw]">
-        Struktur Organisasi
-      </h2>
-      {/* Gambar Bagan */}
+      <div className="flex flex-col items-center mt-[5vw] mb-10">
+        <h2 className="text-[2.5vw] font-bold text-green-900 mb-[1.5vw]">
+          Struktur Organisasi
+        </h2>
+        {/* Gambar Bagan */}
         <div className="w-full flex justify-center">
-        <img
+          <img
             src="/strukturorganisasi/bagan.svg"
             alt="Bagan Struktur Organisasi"
             className="w-full max-w-[1400px] h-auto"
-        />
+          />
         </div>
-    </div>
+      </div>
     </div>
   );
 };

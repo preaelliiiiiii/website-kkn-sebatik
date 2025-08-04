@@ -1,17 +1,9 @@
 import About from "@/components/landingpage/About";
 import LayananInformasi from "@/components/landingpage/LayananInformasti";
-import Header from "@/components/layout/header";
 import BeritaTerkini from "@/components/landingpage/BeritaTerkini";
 import SebatikBarat from "@/components/landingpage/SebatikBarat";
 import PendudukWilayah from "@/components/landingpage/PendudukWilayah";
-import Visi from "@/components/profil/VisiMisi";
-import Struktur from "@/components/profil/StrukturOrganisasi";
-import Pendidikan from "@/components/saranaprasarana/Pendidikan";
-import Olahraga from "@/components/saranaprasarana/Olahraga";
-import Kesehatan from "@/components/saranaprasarana/Kesehatan";
-import Transportasi from "@/components/saranaprasarana/Transportasi";
-import Ibadah from "@/components/saranaprasarana/TempatIbadah";
-
+import Peta from "@/components/landingpage/peta";
 
 // import { useEffect } from "react";
 // import Image from "next/image";
@@ -20,19 +12,12 @@ export default function Home() {
   return (
     <div className="w-full bg-white ">
       <div className="flex flex-col items-center justify-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <Header />
       <SebatikBarat />
       <PendudukWilayah />
+      <Peta />
       <LayananInformasi />
       <About />
       <BeritaTerkini />
-      <Visi />
-      <Struktur />
-      <Pendidikan />
-      <Olahraga />
-      <Kesehatan />
-      <Transportasi />
-      <Ibadah />
       {/* <Berita />
       <UMKM /> */}
       {/* <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">

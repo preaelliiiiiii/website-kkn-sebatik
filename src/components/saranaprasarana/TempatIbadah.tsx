@@ -24,7 +24,7 @@ const TempatIbadahPage = () => {
     `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(alamat)}`;
 
   return (
-    <div className="mt-14 mb-16 px-12 w-full">
+    <div className="font-montserrat mt-14 mb-16 px-12 w-full">
       <h1 className="text-[2.5vw] font-bold text-green-900 mb-[1.5vw] text-center">
         Tempat Ibadah
       </h1>
@@ -49,9 +49,15 @@ const TempatIbadahPage = () => {
                   index % 2 === 0 ? "bg-gray-50" : "bg-gray-100"
                 } hover:bg-green-50 transition text-black`}
               >
-                <td className="px-6 h-20 border border-gray-400 text-center">{index + 1}</td>
-                <td className="px-6 h-20 border border-gray-400">{item.nama}</td>
-                <td className="px-6 h-20 border border-gray-400">{item.alamat}</td>
+                <td className="px-6 h-20 border border-gray-400 text-center font-medium">
+                  {index + 1}
+                </td>
+                <td className="px-6 h-20 border border-gray-400 font-semibold">
+                  {item.nama}
+                </td>
+                <td className="px-6 h-20 border border-gray-400">
+                  {item.alamat}
+                </td>
                 <td className="px-6 h-20 border border-gray-400 text-center">
                   <a
                     href={generateMapsLink(item.alamat)}
