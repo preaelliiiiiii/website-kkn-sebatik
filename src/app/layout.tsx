@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fustat, Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
+import { Hanken_Grotesk } from "next/font/google";
+import Header from "@/components/layout/header"; // Pastikan path-nya benar
+import Footer from "@/components/layout/footer";
 import "./globals.css";
+
+const fustat = Fustat({
+  variable: "--font-fustat",
+  subsets: ["latin"],
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -10,6 +19,16 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const hankenGrotesk = Hanken_Grotesk({
+  variable: "--font-hanken-grotesk",
+  subsets: ["latin"],
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {
@@ -25,9 +44,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`
+          ${geistSans.variable} ${geistMono.variable} ${montserrat.variable}
+          ${fustat.variable} ${hankenGrotesk.variable}
+          antialiased flex flex-col min-h-screen
+        `}
       >
-        {children}
+        {/* HEADER selalu di atas */}
+        <Header />
+
+        {/* MAIN akan mengisi ruang yang tersedia */}
+        <main className="flex-grow">
+          {children}
+        </main>
+
+        {/* FOOTER akan selalu menempel di bawah */}
+        <Footer />
       </body>
     </html>
   );

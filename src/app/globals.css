@@ -3,13 +3,22 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary-100: #024012;
+  --primary-200: #1B4526;
+  --gray-secondary: #5E5C5C;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-gray-secondary: var(--gray-secondary);
+  --font-hanken-grotesk: var(--font-hanken-grotesk);
+  --font-fustat: var(--font-fustat);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-montserrat: var(--font-montserrat); 
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,3 +33,4 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
